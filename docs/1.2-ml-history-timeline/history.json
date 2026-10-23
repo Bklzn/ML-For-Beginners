@@ -1,0 +1,200 @@
+{
+  "title": {
+    "text": {
+      "headline": "The History of Machine Learning",
+      "text": "<p>Key milestones from the history of machine learning and artificial intelligence covered in lessons 1–2, from Bayes' theorem to recurrent neural networks.</p>"
+    }
+  },
+  "eras": [
+    {
+      "start_date": { "year": "1763" },
+      "end_date": { "year": "1949" },
+      "text": { "headline": "Mathematical foundations" }
+    },
+    {
+      "start_date": { "year": "1950" },
+      "end_date": { "year": "1974" },
+      "text": { "headline": "Machines that think and the golden years" }
+    },
+    {
+      "start_date": { "year": "1974" },
+      "end_date": { "year": "1980" },
+      "text": { "headline": "AI Winter" }
+    },
+    {
+      "start_date": { "year": "1980" },
+      "end_date": { "year": "1987" },
+      "text": { "headline": "Expert systems" }
+    },
+    {
+      "start_date": { "year": "1987" },
+      "end_date": { "year": "1993" },
+      "text": { "headline": "AI Chill" }
+    },
+    {
+      "start_date": { "year": "1993" },
+      "end_date": { "year": "2011" },
+      "text": { "headline": "Data and compute" }
+    },
+    {
+      "start_date": { "year": "2011" },
+      "end_date": { "year": "2026" },
+      "text": { "headline": "Now: ML in everyday life" }
+    }
+  ],
+  "events": [
+    {
+      "start_date": { "year": "1763" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bayes_theorem_visualisation.svg/960px-Bayes_theorem_visualisation.svg.png",
+        "caption": "A geometric visualisation of Bayes' theorem.",
+        "credit": "Cmglee, CC BY-SA 3.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Bayes' theorem",
+        "text": "<p>Thomas Bayes' essay on probability is published posthumously by Richard Price. Bayes' theorem later becomes a foundation for probabilistic inference.</p><p><a href=\"https://en.wikipedia.org/wiki/Bayes%27_theorem\">Source: Wikipedia — Bayes' theorem</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1805" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Legendre.jpg",
+        "caption": "Adrien-Marie Legendre.",
+        "credit": "Julien-Léopold Boilly, Public domain, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Least squares theory",
+        "text": "<p>Adrien-Marie Legendre introduces the method of least squares, a technique for fitting a model to noisy data that is central to regression.</p><p><a href=\"https://en.wikipedia.org/wiki/Least_squares\">Source: Wikipedia — Least squares</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1913" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Andrei_Markov.jpg/960px-Andrei_Markov.jpg",
+        "caption": "Andrey Markov.",
+        "credit": "Unknown author, Public domain, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Markov chains",
+        "text": "<p>Andrey Markov introduces Markov chains, in which the next state depends only on the current state.</p><p><a href=\"https://en.wikipedia.org/wiki/Markov_chain\">Source: Wikipedia — Markov chain</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1950" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Alan_turing_header.jpg",
+        "caption": "Alan Turing, 1951.",
+        "credit": "Elliott & Fry, Public domain, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Turing proposes the imitation game",
+        "text": "<p>Alan Turing publishes <em>Computing Machinery and Intelligence</em>, proposing the imitation game — later known as the Turing Test.</p><p><a href=\"https://academic.oup.com/mind/article/LIX/236/433/986238\">Source: Turing (1950)</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1956" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_McCarthy_Stanford.jpg/960px-John_McCarthy_Stanford.jpg",
+        "caption": "John McCarthy.",
+        "credit": "\"null0\" via Flickr, CC BY-SA 2.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Dartmouth Summer Research Project",
+        "text": "<p>The Dartmouth Summer Research Project on artificial intelligence is held. John McCarthy and colleagues coin the term \"artificial intelligence\" for the proposal.</p><p><a href=\"https://en.wikipedia.org/wiki/Dartmouth_workshop\">Source: Wikipedia — Dartmouth workshop</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1957" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mark_I_Perceptron%2C_Figure_2_of_operator%27s_manual.png/960px-Mark_I_Perceptron%2C_Figure_2_of_operator%27s_manual.png",
+        "caption": "Mark I Perceptron (operator's manual figure).",
+        "credit": "U.S. Government, Public domain, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Rosenblatt introduces the perceptron",
+        "text": "<p>Frank Rosenblatt describes the perceptron, a trainable linear classifier that underlies early work on neural networks.</p><p><a href=\"https://en.wikipedia.org/wiki/Perceptron\">Source: Wikipedia — Perceptron</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1966" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/ELIZA_conversation.png",
+        "caption": "A conversation with ELIZA.",
+        "credit": "Joe Strout, CC BY-SA 3.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "ELIZA, an early chatterbot",
+        "text": "<p>ELIZA, an early 'chatterbot', could converse with people and act as a primitive 'therapist'.</p><p><a href=\"https://en.wikipedia.org/wiki/ELIZA\">Source: Wikipedia — ELIZA</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1967" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/K-nearest_Neighbors.png",
+        "caption": "Schematic view of k-nearest neighbors classification.",
+        "credit": "Pkuwangyan06, CC BY-SA 4.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Nearest Neighbor",
+        "text": "<p>The nearest neighbor algorithm is used to map routes and, in ML contexts, to detect patterns.</p><p><a href=\"https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm\">Source: Wikipedia — k-nearest neighbors algorithm</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1970" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/960px-Colored_neural_network.svg.png",
+        "caption": "Diagram of a feedforward neural network.",
+        "credit": "Glosser.ca, CC BY-SA 3.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Backpropagation",
+        "text": "<p>Backpropagation is used to train feedforward neural networks.</p><p><a href=\"https://en.wikipedia.org/wiki/Backpropagation\">Source: Wikipedia — Backpropagation</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1970" },
+      "text": {
+        "headline": "SHRDLU and the blocks world",
+        "text": "<p>\"Blocks world\" was an example of a micro-world where blocks could be stacked and sorted. Experiments with SHRDLU helped propel language processing forward.</p><p><a href=\"https://en.wikipedia.org/wiki/SHRDLU\">Source: Wikipedia — SHRDLU</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1972" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/SRI_Shakey_robot%2C_1969%2C_Computer_History_Museum.jpg",
+        "caption": "Shakey the robot.",
+        "credit": "SRI International, Public domain, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Shakey the robot",
+        "text": "<p>Shakey the robot could maneuver and decide how to perform tasks 'intelligently'.</p><p><a href=\"https://en.wikipedia.org/wiki/Shakey_the_robot\">Source: Wikipedia — Shakey the robot</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "1982" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Recurrent_neural_network_unfold.svg",
+        "caption": "Unfolded recurrent neural network.",
+        "credit": "fdeloche, CC BY-SA 4.0, Wikimedia Commons"
+      },
+      "text": {
+        "headline": "Recurrent Neural Networks",
+        "text": "<p>Recurrent neural networks (RNNs) are artificial neural networks derived from feedforward neural networks that create temporal graphs.</p><p><a href=\"https://en.wikipedia.org/wiki/Recurrent_neural_network\">Source: Wikipedia — Recurrent neural network</a></p>"
+      }
+    },
+    {
+      "start_date": { "year": "2007" },
+      "text": {
+        "headline": "Smartphones and the rise of big data",
+        "text": "<p>The amount of data began to rapidly increase and become more widely available, especially with the advent of the smartphone around 2007"
+      }
+    },
+    {
+      "start_date": { "year": "2018" },
+      "text": {
+        "headline": "ChatGPT and AI",
+        "text": "<p>ChatGPT and AI are the latest advances in natural language processing.</p><p><a href=\"https://en.wikipedia.org/wiki/ChatGPT\">Source: Wikipedia — ChatGPT</a></p>"
+      }
+    }
+  ]
+}
