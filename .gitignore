@@ -362,5 +362,6 @@ MigrationBackup/
 ML-For-Beginners.Rproj
 
 .env
-.venv
-venv
+!.venv
+.venv/*
+!.venv/requirements.txt
