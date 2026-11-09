@@ -1,0 +1,218 @@
+/* ---------------------------------------------------------------
+   Pumpkin Color Predictor
+   --------------------------------------------------------------- */
+
+:root {
+  --bg: #17110d;
+  --card: #221a15;
+  --surface: #1b1512;
+  --border: #3a2c22;
+  --text: #f6efe7;
+  --muted: #b9a595;
+  --orange: #ff8c42;
+  --orange-light: #ffb347;
+  --white-pumpkin: #f3e6cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(
+      900px 460px at 50% -10%,
+      rgba(255, 140, 66, 0.18),
+      transparent 70%
+    ),
+    var(--bg);
+}
+
+/* --- Card ----------------------------------------------------- */
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* --- Header --------------------------------------------------- */
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header__emoji {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.header h1 {
+  margin: 12px 0 8px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+}
+
+.header__subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.orange {
+  color: var(--orange-light);
+}
+
+.white {
+  color: var(--white-pumpkin) !important;
+}
+
+/* --- Form ----------------------------------------------------- */
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* the fifth field (origin) gets the full row, so the grid stays even */
+.field:last-child {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+select {
+  width: 100%;
+  padding: 11px 36px 11px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  appearance: none;
+  cursor: pointer;
+  /* custom chevron, so the arrow matches the dark theme */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23b9a595' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+select:hover {
+  background-color: #211a16;
+}
+
+select:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* --- Button --------------------------------------------------- */
+
+.btn {
+  width: 100%;
+  padding: 14px 18px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  color: #23150c;
+  background: linear-gradient(180deg, var(--orange-light), var(--orange));
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    filter 0.15s ease,
+    transform 0.08s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.06);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--orange-light);
+  outline-offset: 2px;
+}
+
+/* --- Result --------------------------------------------------- */
+
+.result {
+  margin: 20px 0 0;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--orange-light);
+  background: rgba(255, 140, 66, 0.1);
+  border: 1px solid rgba(255, 140, 66, 0.35);
+  border-radius: 14px;
+}
+
+/* --- Footer --------------------------------------------------- */
+
+.footer {
+  margin: 24px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: #7d6b5e;
+}
+
+/* --- Small screens -------------------------------------------- */
+
+@media (max-width: 460px) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

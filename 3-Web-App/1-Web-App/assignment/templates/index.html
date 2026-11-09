@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pumpkin Color Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <main class="card">
+      <header class="header">
+        <div class="header__emoji" aria-hidden="true">🎃</div>
+        <h1>Pumpkin Color Predictor</h1>
+        <p class="header__subtitle">
+          Pick the market details and the model will guess whether the pumpkin
+          is <strong class="orange">orange</strong> or
+          <strong class="white">white</strong>.
+        </p>
+      </header>
+
+      <form action="{{ url_for('predict') }}" method="post">
+        <div class="fields">
+          {% for key, options in allowed.items() %}
+          <div class="field">
+            <label for="field-{{ key }}">
+              {{ key|replace('_', ' ')|title }}
+            </label>
+            <select id="field-{{ key }}" name="{{ key }}" required>
+              {% for option in options %}
+              <option value="{{ option }}">{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endfor %}
+        </div>
+
+        <button type="submit" class="btn">Predict color</button>
+      </form>
+
+      {% if prediction_text %}
+      <p
+        class="result{% if 'WHITE' in prediction_text %} white {% endif %}"
+        role="status"
+      >
+        {{ prediction_text }}
+      </p>
+      {% endif %}
+
+      <p class="footer">
+        Logistic regression trained on 991 pumpkin records from US markets.
+      </p>
+    </main>
+  </body>
+</html>
