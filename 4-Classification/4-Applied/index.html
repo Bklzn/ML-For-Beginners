@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cuisine Matcher</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem 1rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: #f6f7f9;
+        color: #23272f;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        margin: 0 0 1.5rem;
+      }
+
+      #wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.5rem;
+      }
+
+      .boxCont {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background: #fff;
+        border: 1px solid #e2e5ea;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .boxCont:hover {
+        border-color: #b9c0cc;
+      }
+
+      .boxCont input {
+        accent-color: #2f6fed;
+      }
+
+      button {
+        margin-top: 1.5rem;
+        padding: 0.6rem 1.1rem;
+        font: inherit;
+        color: #fff;
+        background: #2f6fed;
+        border: 0;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #2559c4;
+      }
+
+      #result {
+        margin-top: 1rem;
+        font-size: 1.05rem;
+      }
+
+      #result.error {
+        color: #b3261e;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Check your refrigerator. What can you create?</h1>
+      <div id="wrapper">
+        <label class="boxCont">
+          <input type="checkbox" value="4" class="checkbox" />
+          <span>apple</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="247" class="checkbox" />
+          <span>pear</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="77" class="checkbox" />
+          <span>cherry</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="126" class="checkbox" />
+          <span>fenugreek</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="302" class="checkbox" />
+          <span>sake</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="327" class="checkbox" />
+          <span>soy sauce</span>
+        </label>
+
+        <label class="boxCont">
+          <input type="checkbox" value="112" class="checkbox" />
+          <span>cumin</span>
+        </label>
+      </div>
+
+      <button onClick="startInference()">
+        What kind of cuisine can you make?
+      </button>
+
+      <p id="result"></p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/ort.min.js"></script>
+    <script>
+      const ingredients = Array(380).fill(0);
+
+      const checks = [...document.querySelectorAll(".checkbox")];
+      const result = document.getElementById("result");
+
+      function showMessage(text, isError = false) {
+        result.textContent = text;
+        result.classList.toggle("error", isError);
+      }
+
+      checks.forEach((check) => {
+        check.addEventListener("change", function () {
+          // toggle the state of the ingredient
+          // based on the checkbox's value (1 or 0)
+          ingredients[check.value] = check.checked ? 1 : 0;
+        });
+      });
+
+      function testCheckboxes() {
+        // validate if at least one checkbox is checked
+        return checks.some((check) => check.checked);
+      }
+
+      async function startInference() {
+        if (!testCheckboxes()) {
+          showMessage("Please select at least one ingredient.", true);
+          return;
+        }
+
+        showMessage("Thinking...");
+
+        try {
+          // create a new session and load the model.
+          const session = await ort.InferenceSession.create("./model.onnx");
+
+          const input = new ort.Tensor(new Float32Array(ingredients), [1, 380]);
+          const feeds = { float_input: input };
+
+          // feed inputs and run
+          const results = await session.run(feeds);
+
+          // read from results
+          showMessage(
+            "You can enjoy " + results.label.data[0] + " cuisine today!",
+          );
+        } catch (e) {
+          console.log(`failed to inference ONNX model`);
+          console.error(e);
+          showMessage("Sorry, the model could not be loaded.", true);
+        }
+      }
+    </script>
+  </body>
+</html>
